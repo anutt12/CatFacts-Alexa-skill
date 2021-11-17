@@ -11,3 +11,30 @@ We started our capstone project by following the tutorial [Alexa Skills Kit SDK 
 We decided to start from scratch and routinely tested between our IntelliJ IDE, Alexa Developer Console, and AWS Lambda to ensure functionality. We have added the minimum requirements needed to receive a custom response from Alexa, including pulling data from an Open API.  
 
 ### Basic Alexa Skill Setup
+
+__1.__ Add Alexa dependencies to the pom.xml file:
+> 
+
+        <dependency>
+            <groupId>com.amazon.alexa</groupId>
+            <artifactId>ask-sdk</artifactId>
+            <version>2.41.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-core</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+
+__2.__ The following dependency was added to help us format API information to the JSON format:
+>
+
+        <dependency>
+            <groupId>com.cedarsoftware</groupId>
+            <artifactId>json-io</artifactId>
+            <version>4.5.0</version>
+        </dependency>
+
+
+        
