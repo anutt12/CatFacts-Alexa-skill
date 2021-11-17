@@ -5,6 +5,7 @@ import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 import com.example.controller.FactController;
 import com.example.service.OpenAPIService;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
@@ -27,8 +28,8 @@ public class CatFactRequestHandler implements RequestHandler {
 
     {
         try {
-            response = factController.sayCatFact(openAPIService.getApiRequest());
-        } catch (IOException e) {
+            response = factController.sayCatFact();
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
     }

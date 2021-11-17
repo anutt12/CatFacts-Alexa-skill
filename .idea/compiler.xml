@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="project" />
-        <module name="amazon-alexa-maven" />
         <module name="cat-fact-test" />
+        <module name="amazon-alexa-maven" />
+        <module name="cat-facts-test" />
       </profile>
     </annotationProcessing>
   </component>

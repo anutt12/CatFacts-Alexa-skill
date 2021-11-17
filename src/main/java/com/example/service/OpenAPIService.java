@@ -1,20 +1,40 @@
 package com.example.service;
 
-import com.cedarsoftware.util.io.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 @Service
 public class OpenAPIService {
 
-    public String getApiRequest() throws IOException {
+    private static String readAll(Reader reader) throws IOException {
+        StringBuilder stringBuilder = new StringBuilder();
+        int cp;
+        while ((cp = reader.read()) != -1) {
+            stringBuilder.append((char) cp);
+        }
+        return stringBuilder.toString();
+    }
+
+    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+        try (InputStream inputStream = new URL(url).openStream()) {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+            String jsonText = readAll(bufferedReader);
+            return new JSONObject(jsonText);
+        }
+    }
+
+    public String getApiRequest() throws IOException, JSONException {
 
         URL getUrl = new URL("https://cat-fact.herokuapp.com/facts/random");
 //        Propublica:Andy String apiKey = "O1ZdWmc8x27g8x05YHkc0VYKHfCBYTTTuvDAt4Kn";
@@ -25,8 +45,7 @@ public class OpenAPIService {
         // Set request method
         connection.setRequestMethod("GET");
 
-//        connection.setRequestProperty("x-api-key",apiKey);
-
+        //  connection.setRequestProperty("x-api-key",apiKey);
 
         // Getting response code
         int responseCode = connection.getResponseCode();
@@ -34,23 +53,15 @@ public class OpenAPIService {
         // If responseCode is 200 means we get data successfully
         if (responseCode == HttpURLConnection.HTTP_OK) {
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        JSONObject json = readJsonFromUrl(getUrl.toString());
+        String factReturn = (String) json.get("text");
 
-            StringBuilder jsonResponseData = new StringBuilder();
-
-
-            String readLine = null;
-            // Append response line by line
-            while ((readLine = in.readLine()) != null){
-                    jsonResponseData.append(readLine);
-                }
-
-            in.close();
             // Print result in string format
-            return JsonWriter.formatJson(jsonResponseData.toString());
+            return factReturn;
         } else {
             return String.valueOf(responseCode);
         }
     }
 
 }
+

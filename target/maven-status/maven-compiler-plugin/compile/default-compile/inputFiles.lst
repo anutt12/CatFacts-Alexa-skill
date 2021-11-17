@@ -1,8 +1,8 @@
-/Users/matthompson/Desktop/cat-fact-test/src/main/java/com/example/Test.java
-/Users/matthompson/Desktop/cat-fact-test/src/main/java/com/example/controller/FactController.java
-/Users/matthompson/Desktop/cat-fact-test/src/main/java/com/example/handlers/SimpleAlexaSkillStreamHandler.java
-/Users/matthompson/Desktop/cat-fact-test/src/main/java/com/example/handlers/CatFactRequestHandler.java
-/Users/matthompson/Desktop/cat-fact-test/src/main/java/com/example/handlers/CustomLaunchRequestHandler.java
-/Users/matthompson/Desktop/cat-fact-test/src/main/java/com/example/CatFact.java
-/Users/matthompson/Desktop/cat-fact-test/src/main/java/com/example/service/OpenAPIService.java
-/Users/matthompson/Desktop/cat-fact-test/src/main/java/com/example/handlers/WelcomeRequestHandler.java
+/Users/matthompson/Desktop/cat-facts-test/src/main/java/com/example/CatFact.java
+/Users/matthompson/Desktop/cat-facts-test/src/main/java/com/example/service/OpenAPIService.java
+/Users/matthompson/Desktop/cat-facts-test/src/main/java/com/example/handlers/SimpleAlexaSkillStreamHandler.java
+/Users/matthompson/Desktop/cat-facts-test/src/main/java/com/example/Test.java
+/Users/matthompson/Desktop/cat-facts-test/src/main/java/com/example/handlers/WelcomeRequestHandler.java
+/Users/matthompson/Desktop/cat-facts-test/src/main/java/com/example/handlers/CustomLaunchRequestHandler.java
+/Users/matthompson/Desktop/cat-facts-test/src/main/java/com/example/handlers/CatFactRequestHandler.java
+/Users/matthompson/Desktop/cat-facts-test/src/main/java/com/example/controller/FactController.java

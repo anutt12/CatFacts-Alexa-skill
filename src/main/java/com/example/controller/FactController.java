@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.service.OpenAPIService;
+import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -17,13 +18,12 @@ public class FactController {
     private final Logger logger = LoggerFactory.getLogger(FactController.class);
 
 
-    @ResponseBody
-    public String sayCatFact(@RequestParam(name = "text", required = false, defaultValue = "Cats are cool!") String text) throws IOException {
+    public String sayCatFact() throws IOException, JSONException {
 
         logger.info("Meow");
         OpenAPIService openAPIService = new OpenAPIService();
 
-        text = openAPIService.getApiRequest();
+        String text = openAPIService.getApiRequest();
 
         return String.format(template, text);
     }
