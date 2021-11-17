@@ -12,7 +12,7 @@ We decided to start from scratch and routinely tested between our IntelliJ IDE, 
 
 ## Basic Alexa Skill Setup
 
-#### Add Alexa dependencies to the pom.xml file:
+### Add Alexa dependencies to the pom.xml file:
 > 
 
         <dependency>
@@ -27,7 +27,7 @@ We decided to start from scratch and routinely tested between our IntelliJ IDE, 
             <version>1.2.1</version>
         </dependency>
 
-#### The following dependency was added to help us format API information to the JSON format:
+### The following dependency was added to help us format API information to the JSON format:
 >
 
         <dependency>
@@ -36,12 +36,12 @@ We decided to start from scratch and routinely tested between our IntelliJ IDE, 
             <version>4.5.0</version>
         </dependency>
 
-#### Create the following additional packages in the com.example package:  
+### Create the following additional packages in the com.example package:  
 • controller  
 • handlers  
 • service  
 
-#### Let's get started with our Alexa handlers! 
+### Let's get started with our Alexa handlers! 
 The handlers are responsible for ensuring Alexa provides the proper response to an *Intent*. Intents are defined in each separate class and are referenced in the Alexa Developer Console.  
   
 ***Please note that many of the handlers provided in the Alexa Tutorial are pre-built in each skill. Each handler is setup the same way with the ability to customize.***  
@@ -75,7 +75,7 @@ Place your Alexa Skill's Intent Name as a String in the parenthesis after "inten
 Place your desired Alexa's response as a String in the parenthesis after ".withSpeech".  
 We will explore customizing a request handler later!  
 
-#### Create a Java Class in the Service package. 
+### Create a Java Class in the Service package. 
 __In this example, we named it "OpenAPIService."__  
 This is where we access an open API providing cat facts. We used [Cat Facts API Documentation](https://alexwohlbruck.github.io/cat-facts/docs/). Alexa's method "withSpeech" in the HandlerInput class requires a String value. We decided to return Strings through our various methods in order to easily provide Alexa with the information we want returned.  
 
@@ -189,4 +189,4 @@ __Here is this class's full code:__
       }
     }
 
-#### Create a Controller
+### Create a Controller
