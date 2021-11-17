@@ -190,3 +190,81 @@ __Here is this class's full code:__
     }
 
 ### Create a Controller
+Now we can create our controller. We named ours "Fact Controller." This class contains a method that formats the output into a cohesive response from Alexa.
+>
+
+    import com.example.service.OpenAPIService;
+    import org.json.JSONException;
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+    import org.springframework.stereotype.Controller;
+
+    import java.io.IOException;
+
+
+    @Controller
+    public class FactController {
+
+    private static final String template = "Your fact of the day is %s!";
+    private final Logger logger = LoggerFactory.getLogger(FactController.class);
+
+    // this formats Alexa's output speech into a cohesive response
+    public String sayCatFact() throws IOException, JSONException {
+
+        logger.info("Meow");
+        OpenAPIService openAPIService = new OpenAPIService();
+
+        String text = openAPIService.getApiRequest();
+
+        return String.format(template, text);
+      }
+    }
+    
+### CatFactRequestHandler
+__It's customizing time!__ This is where we are going to create our specific skill!
+
+>
+    
+    import com.amazon.ask.dispatcher.request.handler.HandlerInput;
+    import com.amazon.ask.dispatcher.request.handler.RequestHandler;
+    import com.amazon.ask.model.Response;
+    import com.example.controller.FactController;
+    import com.example.service.OpenAPIService;
+    import org.json.JSONException;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import java.io.IOException;
+    import java.util.Optional;
+    import static com.amazon.ask.request.Predicates.intentName;
+
+    public class CatFactRequestHandler implements RequestHandler {
+    @Override
+    public boolean canHandle(HandlerInput handlerInput) {
+        return handlerInput.matches(intentName("CatFactIntent"));
+    }
+
+    FactController factController = new FactController();
+
+    @Autowired
+    OpenAPIService openAPIService = new OpenAPIService();
+
+    String response;
+
+    {
+        try {
+            response = factController.sayCatFact();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public Optional<Response> handle(HandlerInput handlerInput) {
+        return handlerInput.getResponseBuilder()
+                .withSpeech(response)
+                .build();
+      }
+    }
+__It is important to remember to implement a try/catch statement to address the IO and JSON Exceptions.__
+
+### SkillStreamHandler
+
