@@ -267,4 +267,23 @@ __It's customizing time!__ This is where we are going to create our specific ski
 __It is important to remember to implement a try/catch statement to address the IO and JSON Exceptions.__
 
 ### SkillStreamHandler
+***This class creates the Lambda function we will incorporate soon. You can find the "handler" needed on your Lambda function page by looking at it's configuration by right clicking the*** λ ***symbol in the window. Please install the AWS Toolkit plugin in your IDE to access this.***
+
+>
+
+    import com.amazon.ask.SkillStreamHandler;
+    import com.amazon.ask.Skills;
+
+    public class SimpleAlexaSkillStreamHandler extends SkillStreamHandler {
+
+    public SimpleAlexaSkillStreamHandler() {
+        super(Skills.standard()
+                .addRequestHandler(new WelcomeRequestHandler())
+                .addRequestHandler(new CustomLaunchRequestHandler())
+                .addRequestHandler(new CatFactRequestHandler())
+                .build());
+      }
+    }
+    
+## Build an Alexa Skill
 
