@@ -287,3 +287,4 @@ __It is important to remember to implement a try/catch statement to address the 
     
 ## Build an Alexa Skill
 
+![Create a Skill in the Developer Console](Project-Photos/Create_Skill.PNG)
