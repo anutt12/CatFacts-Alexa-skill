@@ -287,4 +287,5 @@ __It is important to remember to implement a try/catch statement to address the 
     
 ## Build an Alexa Skill
 
-![Create a Skill in the Developer Console](Project-Photos/Create_Skill.PNG)
+We create the skill with "Custom"  for the template, and we will provision our own formatting.
+![Create a Skill in the Developer Console](https://git.generalassemb.ly/matthompson/cat-facts-test/blob/master/Project%20Photos/Create%20Skill.PNG)
