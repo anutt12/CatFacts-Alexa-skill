@@ -1,7 +1,7 @@
-com/example/controller/FactController.class
-com/example/handlers/CustomLaunchRequestHandler.class
-com/example/service/OpenAPIService.class
-com/example/handlers/WelcomeRequestHandler.class
-com/example/handlers/CatFactRequestHandler.class
-com/example/CatFact.class
-com/example/handlers/SimpleAlexaSkillStreamHandler.class
+com\example\handlers\SimpleAlexaSkillStreamHandler.class
+com\example\controller\FactController.class
+com\example\handlers\CustomLaunchRequestHandler.class
+com\example\CatFact.class
+com\example\handlers\WelcomeRequestHandler.class
+com\example\service\OpenAPIService.class
+com\example\handlers\CatFactRequestHandler.class
