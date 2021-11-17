@@ -7,10 +7,8 @@ import com.example.controller.FactController;
 import com.example.service.OpenAPIService;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.io.IOException;
 import java.util.Optional;
-
 import static com.amazon.ask.request.Predicates.intentName;
 
 public class CatFactRequestHandler implements RequestHandler {

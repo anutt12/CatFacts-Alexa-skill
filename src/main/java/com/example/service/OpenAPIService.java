@@ -1,18 +1,15 @@
 package com.example.service;
 
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
+
 
 @Service
 public class OpenAPIService {
