@@ -12,7 +12,7 @@ We decided to start from scratch and routinely tested between our IntelliJ IDE, 
 
 ### Basic Alexa Skill Setup
 
-__1.Add Alexa dependencies to the pom.xml file:
+__1.Add Alexa dependencies to the pom.xml file:__
 > 
 
         <dependency>
@@ -27,7 +27,7 @@ __1.Add Alexa dependencies to the pom.xml file:
             <version>1.2.1</version>
         </dependency>
 
-__2. The following dependency was added to help us format API information to the JSON format:
+__2. The following dependency was added to help us format API information to the JSON format:__
 >
 
         <dependency>
@@ -36,7 +36,7 @@ __2. The following dependency was added to help us format API information to the
             <version>4.5.0</version>
         </dependency>
 
-__3. Create the following additional packages in the com.example package:  
+__3. Create the following additional packages in the com.example package:__  
 • controller  
 • handlers  
 • service  
@@ -106,7 +106,7 @@ This is where we access an open API providing cat facts. We used [Cat Facts API 
         }
     }  
     
-  - Originally, we had created a BufferedReader inside the "if" statement. We ran into multiple issues as it did not turn the data into a JSONObject. We created two helper methods to assist isolating the desired information:
+Originally, we had created a BufferedReader inside the "if" statement. We ran into multiple issues as it did not turn the data into a JSONObject. We created two helper methods to assist isolating the desired information:
   
   > 
   
